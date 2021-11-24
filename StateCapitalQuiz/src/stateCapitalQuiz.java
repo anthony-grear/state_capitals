@@ -10,16 +10,29 @@ public class stateCapitalQuiz {
 	public static void main(String[] args) {
 		String line = "";  
 		String splitBy = ",";
-		
+		int count=0;
+		int counter=0;
+		String[][] statesAndCaps = new String[50][2];
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Dell_E5400\\eclipse-workspace\\StateCapitalQuiz\\list-state-capitals-us-764j.csv"));
+			BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Dell_E5400\\git\\state_capitals\\StateCapitalQuiz\\list-state-capitals-us-764j.csv"));
 		
-			while ((line = br.readLine()) != null) {
+			while ((line = br.readLine()) != null ) {
 				String[] entry = line.split(splitBy);
-				System.out.println(Arrays.toString(entry));
-			}} 
+				if (count>1 && count<52) {
+					statesAndCaps[counter][0]=entry[4];
+					statesAndCaps[counter][1]=entry[1];
+//					System.out.println(Arrays.toString(entry));
+					counter++;
+				}
+				count++;
+			}}
+		
+		
 		catch (IOException e) {
 				e.printStackTrace();
+		}
+		for (int i = 0 ; i<50;i++) {
+			System.out.println(Arrays.toString(statesAndCaps[i]));
 		}
 	}
 		
