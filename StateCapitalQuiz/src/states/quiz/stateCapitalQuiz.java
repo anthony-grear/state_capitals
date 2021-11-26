@@ -1,3 +1,4 @@
+package states.quiz;
 import java.io.*;
 import java.util.Scanner;
 import java.io.BufferedReader;  
@@ -14,7 +15,7 @@ public class stateCapitalQuiz {
 		int counter=0;
 		String[][] statesAndCaps = new String[50][2];
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Dell_E5400\\git\\state_capitals\\StateCapitalQuiz\\list-state-capitals-us-764j.csv"));
+			BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Dell_E5400\\git\\state_capitals\\StateCapitalQuiz\\src\\states\\quiz\\list-state-capitals-us-764j.csv"));
 		
 			while ((line = br.readLine()) != null ) {
 				String[] entry = line.split(splitBy);
@@ -34,6 +35,8 @@ public class stateCapitalQuiz {
 		for (int i = 0 ; i<50;i++) {
 			System.out.println(Arrays.toString(statesAndCaps[i]));
 		}
+		SwitchTheIndexes s = new SwitchTheIndexes();
+		System.out.println(s.switchTheIndexes("New York","New Jersey"));
 	}
 		
 		
