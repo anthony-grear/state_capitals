@@ -9,7 +9,7 @@ public class StatesAndCaps {
 	 *sorted by State in ascending order.
 	 */
 	
-	String[][] sortedByStates() {
+	String[][] importList() {
 	String line = "";  
 	String splitBy = ",";
 	int count=0;

@@ -12,16 +12,20 @@ public class stateCapitalQuiz {
 	public static void main(String[] args) {
 		
 		StatesAndCaps st = new StatesAndCaps();
+		String[][] arr;
+		String[][] byCapitals;
 		String[][] byStates;
 		
-		//Get 2D array, sorted by state (ascending)
-		byStates = st.sortedByStates();
+		//Import from csv file and populate 2D array, sorted by state (ascending)
+		arr = st.importList();		
+		printArray(arr);
 		
+		BubbleSort bbbl = new BubbleSort();
+		byCapitals = bbbl.sortByCapitals(arr);
+		printArray(byCapitals);
+		byStates = bbbl.sortByStates(byCapitals);
 		printArray(byStates);
 		
-		
-		SwitchTheIndexes s = new SwitchTheIndexes();
-		System.out.println(s.switchTheIndexes("New York","New Jersey"));
 	}
 		
 		
