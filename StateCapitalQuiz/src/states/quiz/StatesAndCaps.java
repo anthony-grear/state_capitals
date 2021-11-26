@@ -5,7 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class StatesAndCaps {
-	String[][] getStatesAndCaps() {
+	/*generates a 2D array of Capitals and States,
+	 *sorted by State in ascending order.
+	 */
+	
+	String[][] sortedByStates() {
 	String line = "";  
 	String splitBy = ",";
 	int count=0;
@@ -23,7 +27,7 @@ public class StatesAndCaps {
 				counter++;
 			}
 			count++;
-		} return statesAndCaps;
+		} br.close(); return statesAndCaps;
 		}		
 	catch (IOException e) {
 			e.printStackTrace();
