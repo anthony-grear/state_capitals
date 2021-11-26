@@ -33,14 +33,17 @@ public class SwitchTheIndexes {
 	    sub1 = word1.substring(0,shortest);
 	    sub2 = word2.substring(0,shortest);
 	    
-	    /*If the words are of different length,
-	    and the substrings are equal, if word1 is shortest,
-	    return false, (don't switch indexes), if word 2 is shortest,
-	    then return true, (switch indexes).
-
-	    If the words are of the same length, if word 1 is less or 
-	    equal to 0, return false, (don't switch indexes)
-	    else return true, (switch indexes)  
+	    /* If the words are of different length,
+	     * and the substrings are equal, if word1 is shortest,
+	     * return false, (don't switch indexes), if word 2 is shortest,
+	     * then return true, (switch indexes). 
+	     * 
+	     * Otherwise, if compareTo()
+		 * is negative, return false, else return true.
+		 * 
+	     * If the words are of the same length, if word 1 is less or 
+	     * equal to 0, return false, (don't switch indexes)
+	     * else return true, (switch indexes)  
 	     */
 	    if (length1 != length2) {
 	      if (sub1.compareTo(sub2)==0) {      

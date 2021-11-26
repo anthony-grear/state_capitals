@@ -17,8 +17,10 @@ public class StatesAndCaps {
 	String[][] statesAndCaps = new String[50][2];
 	
 	try {
+		//Create a buffered reader object (read characters from an input stream)
 		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Dell_E5400\\git\\state_capitals\\StateCapitalQuiz\\src\\states\\quiz\\list-state-capitals-us-764j.csv"));
-	
+		
+		//read line by line and populate the 2D array with capitals and states
 		while ((line = br.readLine()) != null ) {
 			String[] entry = line.split(splitBy);
 			if (count>1 && count<52) {

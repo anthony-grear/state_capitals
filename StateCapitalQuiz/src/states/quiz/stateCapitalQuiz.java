@@ -16,6 +16,7 @@ public class stateCapitalQuiz {
 		
 		//Get 2D array, sorted by state (ascending)
 		byStates = st.sortedByStates();
+		
 		printArray(byStates);
 		
 		
