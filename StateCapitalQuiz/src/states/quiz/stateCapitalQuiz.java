@@ -26,6 +26,9 @@ public class stateCapitalQuiz {
 		byStates = bbbl.sortByStates(byCapitals);
 		printArray(byStates);
 		
+		Quiz q = new Quiz();
+		q.startQuiz();
+		
 	}
 		
 		
