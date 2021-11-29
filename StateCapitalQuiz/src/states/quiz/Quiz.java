@@ -19,7 +19,7 @@ public class Quiz {
 		
 		System.out.println("Welcome to the US States and Capitols Quiz\n\n"
 				+ "For the state capitals quiz, enter 'caps'."
-				+ "\nFor the states quiz, enter 'state'.\nEnter 'quit' to exit.");
+				+ "\nFor the states quiz, enter 'states'.\nEnter 'quit' to exit.");
 		Scanner sc = new Scanner(System.in);
 		userResponse = sc.nextLine().toLowerCase();
 		
@@ -42,6 +42,9 @@ public class Quiz {
 			String correctString = String.valueOf(correct);
 			if (userResponse.equals("quit")) {
 				System.out.println("Thank you for playing.\nYour total score: " + correctString);
+				System.out.println("Press enter to continue.");
+				Scanner scan = new Scanner(System.in);
+				String pause = scan.nextLine();
 				break;
 			}
 			if (arr[count][choice2].toLowerCase().equals(userResponse) ) {
