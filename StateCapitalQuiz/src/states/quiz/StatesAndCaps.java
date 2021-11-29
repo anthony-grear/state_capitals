@@ -1,6 +1,9 @@
 package states.quiz;
 
 import java.io.BufferedReader;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -29,7 +32,9 @@ public class StatesAndCaps {
 				counter++;
 			}
 			count++;
-		} br.close(); return statesAndCaps;
+		} 
+		br.close();		
+		return statesAndCaps;
 		}		
 	catch (IOException e) {
 			e.printStackTrace();

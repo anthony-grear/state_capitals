@@ -18,25 +18,30 @@ public class Quiz {
 		String question = null;
 		
 		System.out.println("Welcome to the US States and Capitols Quiz\n\n"
-				+ "For the state capitals quiz, enter 'caps'."
-				+ "\nFor the states quiz, enter 'states'.\nEnter 'quit' to exit.");
+				+ "1. State Capitals Quiz"
+				+ "\n2. States Quiz\n   Enter Quit to Exit\n");
 		Scanner sc = new Scanner(System.in);
-		userResponse = sc.nextLine().toLowerCase();
+		String userInput = sc.nextLine().toLowerCase();
 		
-		if (userResponse.equals("caps")) {
+		if (userInput.equals("1")) {
 			choice1 = 1;
 			choice2 = 0;
-			question = "What is the capital city of the following US state? ";
-		} else if (userResponse.equals("states") ) {
+			question = "What is the capital city of " ;
+		} else if (userInput.equals("2") ) {
 			choice1 = 0;
 			choice2 = 1;
-			question = "To what US state does the following capital city belong? ";
-		} else {
+			question = " is the capital of what state?";
+		} else if (userInput.equals("quit")) {
 			count = 50;
 		}
 		
 		while (count!=50) {
-			System.out.println(question + arr[count][choice1]);
+			if (userInput.equals("1")) {
+				System.out.println(question + arr[count][choice1]+"?");
+			}
+			if (userInput.equals("2")) {
+				System.out.println(arr[count][choice1]+question);
+			}
 			userResponse = sc.nextLine();
 			userResponse = userResponse.toLowerCase();
 			String correctString = String.valueOf(correct);
