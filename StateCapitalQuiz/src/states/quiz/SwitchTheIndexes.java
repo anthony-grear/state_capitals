@@ -1,6 +1,8 @@
 package states.quiz;
 
 public class SwitchTheIndexes {
+	
+	//method to assist during execution of bubble sort
 	boolean switchTheIndexes(String word1, String word2) {
 	    int length1;
 	    int length2; 

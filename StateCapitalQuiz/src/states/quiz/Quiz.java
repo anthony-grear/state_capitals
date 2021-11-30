@@ -14,12 +14,14 @@ public class Quiz {
 		int choice2 = 1;
 		String question = null;
 		
+		//prompt the user, convert input to lowercase
 		System.out.println("Welcome to the US States and Capitols Quiz\n\n"
 				+ "1. State Capitals Quiz"
 				+ "\n2. States Quiz\n\n   or Enter Quit to Exit\n");
 		Scanner sc = new Scanner(System.in);
 		String userInput = sc.nextLine().toLowerCase();
 		
+		//assign the question format for the quiz that was chosen
 		if (userInput.equals("1")) {
 			choice1 = 1;
 			choice2 = 0;
@@ -32,6 +34,7 @@ public class Quiz {
 			count = 50;
 		}
 		
+		//loops until all 50 questions are complete or the user types quit
 		while (count!=50) {
 			if (userInput.equals("1")) {
 				System.out.println(question + arr[count][choice1]+"?");

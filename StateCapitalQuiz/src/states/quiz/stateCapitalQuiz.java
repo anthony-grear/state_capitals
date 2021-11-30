@@ -9,6 +9,7 @@ import java.util.Set;
 
 public class stateCapitalQuiz {
 	
+	//method to print 2D array
 	public static void printArray(String[][] arr) {
 		for (int i = 0 ; i<50;i++) {
 			System.out.println(" "+Arrays.toString(arr[i]));
@@ -16,16 +17,20 @@ public class stateCapitalQuiz {
 		System.out.println("\n");
 	}
 	
+	//method to populate hashmap with values and print
 	public static void makeHashMap(String[][] arr) {
 		HashMap<String,String> hm = new HashMap<String,String>();
 		for (int i =0;i<50;i++) {
 			hm.put(arr[i][0], arr[i][1]);			
 		}
+		
+		System.out.println(" US States and Capital Cities HashMap\n--------------------------------------");
 		for (String i: hm.keySet()) {
-			System.out.println(i + ", " + hm.get(i));
+			System.out.println(" " + i + ", " + hm.get(i));
 		}
 	}
 	
+	//method to run the capital city generator
 	public static void getCapitalCities(String[][] arr) {
 		HashMap<String,String> hashmap = new HashMap<String,String>();
 		for (int i =0;i<50;i++) {
@@ -52,20 +57,23 @@ public class stateCapitalQuiz {
 		}
 	}
 	
+	//method to populate tree map with values and then print
 	public static void makeTreeMap(String[][] arr) {
 		TreeMap<String,String> tm = new TreeMap<String,String>();
 		for (int i =0;i<50;i++) {
 			tm.put(arr[i][1], arr[i][0]);			
 		}
 		Set s = tm.entrySet();
+		System.out.println(" US States and Capital Cities TreeMap\n--------------------------------------");
 		
 		Iterator i = s.iterator();
 		while (i.hasNext()) {
 			Map.Entry me = (Map.Entry)i.next();
-			System.out.println(me.getValue()+", "+me.getKey());
+			System.out.println(" "+me.getValue()+", "+me.getKey());
 		}
 		
 	}
+	
 	
 	public static void main(String[] args) {
 		String choice = null;
@@ -74,22 +82,20 @@ public class stateCapitalQuiz {
 		String[][] byCapitals=null;
 		String[][] byStates = null;		
 		boolean run = true;
-		String pause=null;
-		
+		String pause=null;		
 		arr = st.importList();
 		BubbleSort bbbl = new BubbleSort();
 		byCapitals = bbbl.sortByCapitals(arr);
-//		printArray(byCapitals);
-//		
 		
-//		printArray(byCapitals);
-//		printArray(byStates);
+		//run the main menu until the user quits
 		while (run) {
-			System.out.println("Choose:\n1. Print imported array.\n2. Sort by Capital City "
+			System.out.println("Choose a number:\n1. Print imported array.\n2. Sort by Capital City "
 					+ "\n3. Sort by State\n4. Quiz\n5. Make HashMap"
 					+ "\n6. Make TreeMap\n7. Capital City Generator\n8. Exit\n");
 			Scanner sc = new Scanner(System.in);
 			choice = sc.nextLine();
+			
+			//switch case block for main menu
 			switch (choice) {
 			case "1":
 				arr = st.importList();

@@ -1,7 +1,8 @@
 package states.quiz;
 
 public class BubbleSort {
-		
+	
+	//bubble sort by capitals
 	public String[][] sortByCapitals(String[][] arr) {
 		String[] temp;
 		for (int i=0;i<arr.length;i++) {
@@ -17,6 +18,7 @@ public class BubbleSort {
 		return arr;		
 	}
 	
+	//bubble sort by state
 	public String[][] sortByStates(String[][] arr) {
 		String[] temp;
 		for (int i=0;i<arr.length;i++) {
