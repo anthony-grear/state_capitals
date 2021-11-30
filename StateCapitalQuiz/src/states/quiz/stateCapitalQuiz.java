@@ -26,6 +26,32 @@ public class stateCapitalQuiz {
 		}
 	}
 	
+	public static void getCapitalCities(String[][] arr) {
+		HashMap<String,String> hashmap = new HashMap<String,String>();
+		for (int i =0;i<50;i++) {
+			hashmap.put(arr[i][1], arr[i][0]);			
+		}
+		
+		boolean run=true;
+		while (run) {
+			System.out.println("Welcome to the US State Capital City Generator!\n1. Generate Capital City\n2. Exit\n");				
+			Scanner sc = new Scanner(System.in);
+			String userInput = sc.nextLine().toLowerCase();
+			userInput = userInput.substring(0, 1).toUpperCase() + userInput.substring(1);
+			switch (userInput) {
+			case "1":
+				System.out.println("Enter a state: ");
+				userInput = sc.nextLine().toLowerCase();
+				userInput = userInput.substring(0, 1).toUpperCase() + userInput.substring(1);
+				System.out.println(hashmap.get(userInput)+"\n");
+				break;
+			case "2":
+				run = false;
+				break;
+			}		
+		}
+	}
+	
 	public static void makeTreeMap(String[][] arr) {
 		TreeMap<String,String> tm = new TreeMap<String,String>();
 		for (int i =0;i<50;i++) {
@@ -61,7 +87,7 @@ public class stateCapitalQuiz {
 		while (run) {
 			System.out.println("Choose:\n1. Print imported array.\n2. Sort by Capital City "
 					+ "\n3. Sort by State\n4. Quiz\n5. Make HashMap"
-					+ "\n6. Make TreeMap\n7. Exit\n");
+					+ "\n6. Make TreeMap\n7. Capital City Generator\n8. Exit\n");
 			Scanner sc = new Scanner(System.in);
 			choice = sc.nextLine();
 			switch (choice) {
@@ -102,6 +128,9 @@ public class stateCapitalQuiz {
 				pause = sc.nextLine();
 				break;
 			case "7":
+				getCapitalCities(arr);
+				break;
+			case "8":
 				System.out.println("Exit Program.\nGoodbye!");
 				run = false;
 				break;

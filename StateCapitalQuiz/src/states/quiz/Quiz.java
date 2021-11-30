@@ -1,7 +1,4 @@
 package states.quiz;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 public class Quiz {
@@ -19,7 +16,7 @@ public class Quiz {
 		
 		System.out.println("Welcome to the US States and Capitols Quiz\n\n"
 				+ "1. State Capitals Quiz"
-				+ "\n2. States Quiz\n   Enter Quit to Exit\n");
+				+ "\n2. States Quiz\n\n   or Enter Quit to Exit\n");
 		Scanner sc = new Scanner(System.in);
 		String userInput = sc.nextLine().toLowerCase();
 		
